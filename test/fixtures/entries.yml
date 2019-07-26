@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyString
+  journal: one
+  done: false
+  scope: MyString
+  type: 
+
+two:
+  content: MyString
+  journal: two
+  done: false
+  scope: MyString
+  type: 
