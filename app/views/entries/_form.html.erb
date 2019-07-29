@@ -1,0 +1,13 @@
+<%= simple_form_for([@journal, @entry]) do |f| %>
+
+    <%= f.input :content %>
+    <%= f.input :scope do %>
+      <%= f.select :scope, [['daily', 1], ['monthly', 2], ['future', 3]]%>
+    <% end %>
+
+    <%= f.input :entry_type do %>
+      <%= f.select :entry_type, [['task', 1], ['event', 2], ['note', 3]]%>
+    <% end %>
+
+    <%= f.submit %>
+<% end %>
