@@ -1,0 +1,9 @@
+<h1> Entries from <%= @journal.title %></h1>
+
+<ul>
+  <% @journal.entries.each do |entry| %>
+    <li>
+      <%= entry.content %>
+    </li>
+  <% end %>
+</ul>

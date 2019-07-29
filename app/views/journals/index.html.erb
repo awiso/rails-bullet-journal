@@ -1,0 +1,16 @@
+<h1>All My Journals</h1>
+
+<% @journals.each do |journal| %>
+  <p>
+    <%= link_to(journal.title, journal_path(journal)) %>
+    <ul>
+      <% journal.entries.each do |entry| %>
+        <li>
+          <%= entry.content %>
+        </li>
+      <% end %>
+    </ul>
+  </p>
+<% end %>
+
+<%= link_to("New Journal", new_journal_path) %>
