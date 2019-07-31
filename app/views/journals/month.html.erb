@@ -1,0 +1,20 @@
+<div class="all_month_log_content">
+  <h1><%= @journal.title %></h1>
+
+  <div class="month_day_container">
+    <div class="month_side">
+      <h3>Overview</h3>
+      <ol>
+        <% @number_of_days[@month].times do |i| %>
+          <li>
+            <%= Date.new(2019, @month, i+1).strftime("%A")[0] %>
+          </li>
+        <% end %>
+      </ol>
+    </div>
+
+    <div class="day_side">
+      <h3>Today</h3>
+    </div>
+  </div>
+</div>

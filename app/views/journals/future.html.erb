@@ -1,11 +1,40 @@
-<h1><%= @journal.title %></h1>
+<div class="all_future_content">
+  <h1><%= @journal.title %></h1>
 
-<h2>Index</h2>
+  <div class="future_log_container">
+    <div class="sidebar">
+    <h3>Index</h3>
+      <% @months.each do |month| %>
+      <p>
+        <%= link_to(month.strftime("%B"), "/month/#{@journal.id}/#{month.month}") %>
+      </p>
+      <% end %>
+    </div>
 
-<ul>
-  <% @entries.each do |entry| %>
-  <li>
-    <%= entry.content %>
-  </li>
-  <% end %>
-</ul>
+  <br>
+
+    <div class="months_container">
+      <h3>Future Log</h3>
+      <div class="months">
+        <% @months.each do |month| %>
+        <div class="<%= month.strftime("%B").downcase %> month">
+          <p>
+            <%= month.strftime("%B") %>
+          </p>
+          <ul>
+            <% @entries.each do |entry| %>
+              <% if entry.created_at.month == month.month %>
+                <li>
+                  <%= entry.content %>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+        </div>
+      </div>
+  </div>
+</div>
+
+

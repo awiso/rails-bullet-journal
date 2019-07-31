@@ -6,13 +6,8 @@ Rails.application.routes.draw do
     resources :entries
   end
 
-  # TODO:
-  # need a route for the "Index & Future" view
-  # what controller does this go to? and action?
   get '/future/:id', to: 'journals#future', as: 'future'
-
-  # TODO:
-  # need a route for the "Month Log" view
-  # what controller does this go to? and action?
+  get '/month/:id', to: 'journals#month', as: 'month'
+  get '/month/:id/:month', to: 'journals#month'
 
 end

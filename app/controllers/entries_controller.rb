@@ -8,7 +8,7 @@ class EntriesController < ApplicationController
   end
 
   def new
-    @types = ['day', 'month', 'future']
+    # @types = ['day', 'month', 'future']
     @journal = Journal.find(params[:journal_id])
     @entry = Entry.new
   end
@@ -17,8 +17,6 @@ class EntriesController < ApplicationController
     @entry = Entry.new(entry_params)
     @entry.journal = Journal.find(params[:journal_id])
     @entry.done = false
-    @entry.scope = "monthly"
-    @entry.entry_type = "task"
     @entry.save!
 
     redirect_to journal_entry_path(@entry.journal, @entry)
@@ -43,7 +41,7 @@ class EntriesController < ApplicationController
   private
 
   def entry_params
-    params.require(:entry).permit(:title, :content)
+    params.require(:entry).permit(:title, :content, :scope, :entry_type)
   end
 
 
