@@ -2,14 +2,7 @@
 
 <% @journals.each do |journal| %>
   <p>
-    <%= link_to(journal.title, journal_path(journal)) %>
-    <ul>
-      <% journal.entries.each do |entry| %>
-        <li>
-          <%= entry.content %>
-        </li>
-      <% end %>
-    </ul>
+    <%= link_to(journal.title, future_path(journal)) %>
   </p>
 <% end %>
 

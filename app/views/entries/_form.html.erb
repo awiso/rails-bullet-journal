@@ -2,7 +2,7 @@
 
     <%= f.input :content %>
     <%= f.input :scope do %>
-      <%= f.select :scope, [['daily', 1], ['monthly', 2], ['future', 3]]%>
+      <%= f.select :scope, [['daily'], ['monthly'], ['future']]%>
     <% end %>
 
     <%= f.input :entry_type do %>

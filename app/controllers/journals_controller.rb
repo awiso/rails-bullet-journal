@@ -36,6 +36,18 @@ class JournalsController < ApplicationController
   def future
     @journal = Journal.find(params[:id])
     @entries = @journal.entries.select{ |e| e.scope == 'future' }
+    p @entries
+
+    @current_month = @journal.created_at
+    @months = [@current_month]
+    5.times do |i|
+      i += 1
+      p @months << @current_month + i.month
+    end
+  end
+
+  def month
+    @journal = Journal.find(params[:id])
   end
 
   private
