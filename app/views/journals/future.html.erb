@@ -1,15 +1,12 @@
 <div class="all_future_content">
   <h1><%= @journal.title %></h1>
 
-  <h2>Index and Future Log</h2>
-
   <div class="future_log_container">
     <div class="sidebar">
     <h3>Index</h3>
       <% @months.each do |month| %>
       <p>
-        <%= month.strftime("%B") %>
-        <!-- Make each of these a link to the Month View -->
+        <%= link_to(month.strftime("%B"), "/month/#{@journal.id}/#{month.month}") %>
       </p>
       <% end %>
     </div>

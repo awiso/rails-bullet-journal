@@ -47,7 +47,11 @@ class JournalsController < ApplicationController
   end
 
   def month
+    @number_of_days = [1, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     @journal = Journal.find(params[:id])
+    @month = params[:month].to_i
+    @entries = @journal.entries.select { |e| e.created_at.month == @month }
+
   end
 
   private

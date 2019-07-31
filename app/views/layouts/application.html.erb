@@ -10,6 +10,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="navbar">
+      <%= link_to("Journals", journals_path) %>
+      <% if @journal %>
+        <%= link_to("Index & Future Log", future_path(@journal)) %>
+      <% end %>
+    </div>
+      <%= yield %>
   </body>
 </html>

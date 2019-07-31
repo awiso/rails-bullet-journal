@@ -8,5 +8,6 @@ Rails.application.routes.draw do
 
   get '/future/:id', to: 'journals#future', as: 'future'
   get '/month/:id', to: 'journals#month', as: 'month'
+  get '/month/:id/:month', to: 'journals#month'
 
 end
