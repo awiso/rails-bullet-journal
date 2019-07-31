@@ -33,6 +33,11 @@ class JournalsController < ApplicationController
     redirect_to journals_path
   end
 
+  def future
+    @journal = Journal.find(params[:id])
+    @entries = @journal.entries.select{ |e| e.scope == 'future' }
+  end
+
   private
 
   def journal_params

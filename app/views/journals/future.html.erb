@@ -1,0 +1,11 @@
+<h1><%= @journal.title %></h1>
+
+<h2>Index</h2>
+
+<ul>
+  <% @entries.each do |entry| %>
+  <li>
+    <%= entry.content %>
+  </li>
+  <% end %>
+</ul>
