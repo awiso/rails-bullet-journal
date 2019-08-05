@@ -1,5 +1,7 @@
 {
   "name": "rails-bullet-journal",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
 }

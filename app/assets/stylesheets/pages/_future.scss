@@ -1,8 +1,3 @@
-body{
-margin:0;
-font-family: sans-serif;
-}
-
 .all_future_content{
   background-color: pink;
   height: 90vh;
@@ -41,27 +36,5 @@ font-family: sans-serif;
 
 .sidebar{
   background-color: lightblue;
-  padding: 20px;
-}
-
-.all_month_log_content{
-  padding: 20px;
-  height: 90vh;
-  background-color: orange;
-}
-
-.month_day_container{
-  display: flex;
-}
-
-.month_side{
-  background-color: lightblue;
-  flex-grow: 1;
-  padding: 20px;
-}
-
-.day_side{
-  background-color: coral;
-  flex-grow: 1;
   padding: 20px;
 }
