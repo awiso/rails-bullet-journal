@@ -1,10 +1,11 @@
 class EntriesController < ApplicationController
+  before_action :find_entry, only: [:show, :edit, :update, :destroy]
+
   def index
     @journal = Journal.find(params[:journal_id])
   end
 
   def show
-    @entry = Entry.find(params[:id])
   end
 
   def new
@@ -23,22 +24,22 @@ class EntriesController < ApplicationController
   end
 
   def edit
-    @entry = Entry.find(params[:id])
   end
 
   def update
-    @entry = Entry.find(params[:id])
     @entry.update(entry_params)
     redirect_to journal_entry_path(@entry)
   end
 
   def destroy
-    @entry = Entry.find(params[:id])
     @entry.destroy
     redirect_to journal_entries_path
   end
 
   private
+  def find_entry
+    @entry = Entry.find(params[:id])
+  end
 
   def entry_params
     params.require(:entry).permit(:title, :content, :scope, :entry_type)
